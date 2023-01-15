@@ -1,0 +1,22 @@
+2023-01-08 22:49:56 ERROR DAOFactory:27 - Database connection creation failed!
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:835)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:455)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:240)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:199)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:681)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:229)
+	at dao.DAOFactory.<init>(DAOFactory.java:23)
+	at dao.DAOFactory.getInstance(DAOFactory.java:38)
+	at dao.impl.UserDAOImpl.insert(UserDAOImpl.java:34)
+	at dao.impl.UserDAOImpl.insert(UserDAOImpl.java:18)
+	at service.impl.UserServiceImpl.insert(UserServiceImpl.java:29)
+	at service.impl.UserServiceImpl.insert(UserServiceImpl.java:11)
+	at Main.lambda$main$0(Main.java:33)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at Main.main(Main.java:31)
+2023-01-08 22:59:31 ERROR UserDAOImpl:307 - Updating user failed, no rows affected!
+2023-01-08 23:00:16 ERROR UserDAOImpl:427 - Deleting user failed, no rows affected!
